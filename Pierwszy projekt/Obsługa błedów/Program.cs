@@ -13,25 +13,36 @@ namespace Obsługa_błedów
 
         static void Main(string[] args)
         {
-            int x, y, wynik;
-            try
+            int x = 0, y = 0, wynik;
+            bool powtorzyc = false;
+            do
             {
-                Console.WriteLine("Podaj x");
-                string xStr = Console.ReadLine();
-                x = int.Parse(xStr);
+                try
+                {
+                    powtorzyc = false;
+                    Console.WriteLine("Podaj x");
+                    string xStr = Console.ReadLine();
+                    x = int.Parse(xStr);
 
-                Console.WriteLine("Podaj y");
-                y = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Podaj y");
+                    y = int.Parse(Console.ReadLine());
 
-                wynik = x / y;
-                //wynik = Iloraz(x, y);
+                    wynik = x / y;
+                    //wynik = Iloraz(x, y);
 
-                Console.WriteLine("Wynik " + wynik);
-            }
-            catch(Exception ex)
-            {
-                //.....
-            }
+                    Console.WriteLine("Wynik " + wynik);
+                }
+                catch(OverflowException ex)
+                {
+                    Console.WriteLine("Bład: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Bład: " + ex.Message);
+                    powtorzyc = true;
+                }
+            } while (powtorzyc == true);
+
 
             Console.ReadLine();
         }
