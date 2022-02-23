@@ -20,7 +20,7 @@ namespace Przetwarzanie_numeru_pesel
         {
             get
             {
-                if (numerPesel[9] jest nieparzysta)
+                if (int.Parse(numerPesel[9].ToString()) %2 == 1)
                         return "mężczyzna";
                 else
                     return "kobieta";
