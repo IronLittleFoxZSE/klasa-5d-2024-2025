@@ -6,9 +6,22 @@ namespace Obsługa_błedów
     {
         static int Iloraz(int a, int b)
         {
-            int c;
-            c = a / b;
-            return c;
+            try
+            {
+                int c;
+                if (b == 0)
+                    throw new Exception("Dzielenie przez zero");
+                c = a / b;
+                return c;
+            }
+            catch (DllNotFoundException ex)
+            {
+                //...
+                //naprawa błedu i powrót
+                
+            }
+            return 0;
+            //....
         }
 
         static void Main(string[] args)
@@ -27,12 +40,13 @@ namespace Obsługa_błedów
                     Console.WriteLine("Podaj y");
                     y = int.Parse(Console.ReadLine());
 
-                    wynik = x / y;
-                    //wynik = Iloraz(x, y);
+                    //wynik = x / y;
+                    wynik = Iloraz(x, y);
 
                     Console.WriteLine("Wynik " + wynik);
                 }
-                catch(OverflowException ex)
+
+                catch (OverflowException ex)
                 {
                     Console.WriteLine("Bład: " + ex.Message);
                 }
@@ -41,6 +55,7 @@ namespace Obsługa_błedów
                     Console.WriteLine("Bład: " + ex.Message);
                     powtorzyc = true;
                 }
+
             } while (powtorzyc == true);
 
 
