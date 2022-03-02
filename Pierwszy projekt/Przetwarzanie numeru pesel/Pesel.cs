@@ -31,12 +31,28 @@ namespace Przetwarzanie_numeru_pesel
         {
             numerPesel = numer;
 
-            if (numer.Length != 11)
-                throw new Exception("Numer ma nieprawidłową ilość znaków");
+            WalidacjaDlugosciLancuchaZnakow();
+            WalidacjaSameCyfry();
+
             //....
 
         }
 
+        private void WalidacjaDlugosciLancuchaZnakow()
+        {
+            if (numerPesel.Length != 11)
+                throw new Exception("Numer ma nieprawidłową ilość znaków");
+        }
 
+        private void WalidacjaSameCyfry()
+        {
+            for (int i = 0; i < numerPesel.Length; i++)
+            {
+                if (!(numerPesel[i] >= '0' && numerPesel[i] <= '9'))
+                    throw new Exception("Numer PESEL nie składa się z samych cyfr");
+
+            }
+        }
     }
 }
+
