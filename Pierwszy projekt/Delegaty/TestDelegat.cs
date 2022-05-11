@@ -10,6 +10,8 @@ namespace Delegaty
     {
         delegate int OperacjaDoWykonaniaDelegate(int x, int y);
 
+        delegate void WyswieltWynikOperacjiDelegate(int wynik, char operacja);
+
         public void Test()
         {
             Console.WriteLine("Podaj pierwsza liczbe");
@@ -34,7 +36,7 @@ namespace Delegaty
                     wynik = 0;
                     break;
             }
-            WyswieltWynikOperacji(wynik, operacja);
+            WyswielWynikOperacji(wynik, operacja);
 
             //wersja druga
             OperacjaDoWykonaniaDelegate operacjaDoWykonaniaDelegate;
@@ -55,12 +57,66 @@ namespace Delegaty
                 wynik = operacjaDoWykonaniaDelegate(x, y);
             else
                 wynik = 0;
+            WyswieltWynikOperacjiDelegate wyswieltWynikOperacjiDelegate;
+            wyswieltWynikOperacjiDelegate = WyswielWynikOperacji;
 
-            WyswieltWynikOperacji(wynik, operacja);
+            wyswieltWynikOperacjiDelegate(wynik, operacja);
 
+            //wersja trzecia
+            Func<int, int, int> operacjaDoWykonaniaFunc;
+            switch (operacja)
+            {
+                case '+':
+                    operacjaDoWykonaniaFunc = Suma;
+                    break;
+                case '*':
+                    operacjaDoWykonaniaFunc = Iloczyn;
+                    break;
+                default:
+                    operacjaDoWykonaniaFunc = null;
+                    break;
+            }
+
+            if (operacjaDoWykonaniaFunc != null)
+                wynik = operacjaDoWykonaniaFunc(x, y);
+            else
+                wynik = 0;
+
+            Action<int, char> wyswieltWynikOperacjiAction;
+            wyswieltWynikOperacjiAction = WyswielWynikOperacji;
+
+            wyswieltWynikOperacjiAction(wynik, operacja);
+
+            //wersja czwarta
+            Func<int, int, int> operacjaDoWykonaniaLambda;
+            switch (operacja)
+            {
+                case '+':
+                    operacjaDoWykonaniaLambda = (int a, int b) =>
+                                                {
+                                                    return a+b;
+                                                };
+                    break;
+                case '*':
+                    operacjaDoWykonaniaLambda = (int a, int b);
+                    break;
+                default:
+                    operacjaDoWykonaniaLambda = null;
+                    break;
+            }
+
+            if (operacjaDoWykonaniaLambda != null)
+                wynik = operacjaDoWykonaniaLambda(x, y);
+            else
+                wynik = 0;
+
+            Action<int, char> wyswieltWynikOperacjiAction;
+            wyswieltWynikOperacjiAction = WyswielWynikOperacji;
+
+            wyswieltWynikOperacjiAction(wynik, operacja);
         }
 
-        private void WyswieltWynikOperacji(int wynik, char operacja)
+        private void WyswielWynikOperacji(int wynik, char operacja)
         {
             Console.WriteLine("Wynik operacji "+ operacja + " to " + wynik);
         }
