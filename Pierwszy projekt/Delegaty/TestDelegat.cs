@@ -98,7 +98,7 @@ namespace Delegaty
                                                 };
                     break;
                 case '*':
-                    operacjaDoWykonaniaLambda = (int a, int b);
+                    operacjaDoWykonaniaLambda = (a, b) => /*return*/ a*b;
                     break;
                 default:
                     operacjaDoWykonaniaLambda = null;
@@ -110,10 +110,10 @@ namespace Delegaty
             else
                 wynik = 0;
 
-            Action<int, char> wyswieltWynikOperacjiAction;
-            wyswieltWynikOperacjiAction = WyswielWynikOperacji;
+            Action<int, char> wyswieltWynikOperacjiLanmbda;
+            wyswieltWynikOperacjiLanmbda = WyswielWynikOperacji;
 
-            wyswieltWynikOperacjiAction(wynik, operacja);
+            wyswieltWynikOperacjiLanmbda(wynik, operacja);
         }
 
         private void WyswielWynikOperacji(int wynik, char operacja)
