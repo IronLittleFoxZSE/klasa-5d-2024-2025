@@ -38,9 +38,19 @@ namespace FirstWinFormsApp
                 return;
             }
 
+            if (age < 1)
+            {
+                MessageBox.Show("Podano wiek ujemny");
+                return;
+            }
 
+            string message = "";
+            if (age >= 18)
+                message = "Jesteś pełnoletni.";
+            else
+                message = "Jesteś niepełnoletni";
 
-            string message = "Witaj " + textBoxName.Text + " w tym programie";
+           message = "Witaj " + textBoxName.Text + " w tym programie\n" + message;
             MessageBox.Show(message);
         }
     }
