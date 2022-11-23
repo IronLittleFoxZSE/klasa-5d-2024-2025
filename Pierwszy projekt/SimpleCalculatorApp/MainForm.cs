@@ -27,6 +27,26 @@ namespace SimpleCalculatorApp
                 int result = firstNumber + secondNumber;
                 labelResult.Text = "Wynik operacji dodawania: " + result;
             }
+            else
+            {
+                labelResult.Text = "Podano nieprawidłowe dane";
+            }
+        }
+
+        private void buttonSub_Click(object sender, EventArgs e)
+        {
+            int firstNumber;
+            int secondNumber;
+            if (int.TryParse(textBoxFirsNumber.Text, out firstNumber)
+                && int.TryParse(textBoxSecondNumber.Text, out secondNumber))
+            {
+                int result = firstNumber - secondNumber;
+                labelResult.Text = "Wynik operacji odejmowania: " + result;
+            }
+            else
+            {
+                labelResult.Text = "Podano nieprawidłowe dane";
+            }
         }
     }
 }

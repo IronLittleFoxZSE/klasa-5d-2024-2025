@@ -90,6 +90,7 @@ namespace SimpleCalculatorApp
             this.buttonSub.TabIndex = 5;
             this.buttonSub.Text = "-";
             this.buttonSub.UseVisualStyleBackColor = true;
+            this.buttonSub.Click += new System.EventHandler(this.buttonSub_Click);
             // 
             // buttonMul
             // 
