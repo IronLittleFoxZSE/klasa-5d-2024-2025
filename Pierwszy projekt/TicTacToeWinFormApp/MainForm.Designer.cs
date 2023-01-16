@@ -32,8 +32,7 @@ namespace TicTacToeWinFormApp
             this.panelConfigGame = new System.Windows.Forms.Panel();
             this.labelWhoStartGame = new System.Windows.Forms.Label();
             this.comboBoxWhoStartGame = new System.Windows.Forms.ComboBox();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonStart = new System.Windows.Forms.Button();
+            this.buttonNewGame = new System.Windows.Forms.Button();
             this.tableLayoutPanelBoard = new System.Windows.Forms.TableLayoutPanel();
             this.buttonPosition00 = new System.Windows.Forms.Button();
             this.buttonPosition10 = new System.Windows.Forms.Button();
@@ -52,8 +51,7 @@ namespace TicTacToeWinFormApp
             // 
             this.panelConfigGame.Controls.Add(this.labelWhoStartGame);
             this.panelConfigGame.Controls.Add(this.comboBoxWhoStartGame);
-            this.panelConfigGame.Controls.Add(this.buttonReset);
-            this.panelConfigGame.Controls.Add(this.buttonStart);
+            this.panelConfigGame.Controls.Add(this.buttonNewGame);
             this.panelConfigGame.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelConfigGame.Location = new System.Drawing.Point(0, 0);
             this.panelConfigGame.Name = "panelConfigGame";
@@ -81,23 +79,15 @@ namespace TicTacToeWinFormApp
             this.comboBoxWhoStartGame.Size = new System.Drawing.Size(121, 23);
             this.comboBoxWhoStartGame.TabIndex = 2;
             // 
-            // buttonReset
+            // buttonNewGame
             // 
-            this.buttonReset.Location = new System.Drawing.Point(242, 29);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 23);
-            this.buttonReset.TabIndex = 1;
-            this.buttonReset.Text = "Reset";
-            this.buttonReset.UseVisualStyleBackColor = true;
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(161, 29);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(75, 23);
-            this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "Start";
-            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonNewGame.Location = new System.Drawing.Point(161, 29);
+            this.buttonNewGame.Name = "buttonNewGame";
+            this.buttonNewGame.Size = new System.Drawing.Size(123, 23);
+            this.buttonNewGame.TabIndex = 0;
+            this.buttonNewGame.Text = "Nowa gra";
+            this.buttonNewGame.UseVisualStyleBackColor = true;
+            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
             // tableLayoutPanelBoard
             // 
@@ -125,6 +115,7 @@ namespace TicTacToeWinFormApp
             this.tableLayoutPanelBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutPanelBoard.Size = new System.Drawing.Size(335, 260);
             this.tableLayoutPanelBoard.TabIndex = 5;
+            this.tableLayoutPanelBoard.Visible = false;
             // 
             // buttonPosition00
             // 
@@ -135,6 +126,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition00.Size = new System.Drawing.Size(86, 61);
             this.buttonPosition00.TabIndex = 0;
             this.buttonPosition00.UseVisualStyleBackColor = true;
+            this.buttonPosition00.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition10
             // 
@@ -145,6 +137,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition10.Size = new System.Drawing.Size(86, 61);
             this.buttonPosition10.TabIndex = 1;
             this.buttonPosition10.UseVisualStyleBackColor = true;
+            this.buttonPosition10.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition20
             // 
@@ -155,6 +148,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition20.Size = new System.Drawing.Size(91, 61);
             this.buttonPosition20.TabIndex = 2;
             this.buttonPosition20.UseVisualStyleBackColor = true;
+            this.buttonPosition20.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition01
             // 
@@ -165,6 +159,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition01.Size = new System.Drawing.Size(86, 61);
             this.buttonPosition01.TabIndex = 3;
             this.buttonPosition01.UseVisualStyleBackColor = true;
+            this.buttonPosition01.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition11
             // 
@@ -175,6 +170,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition11.Size = new System.Drawing.Size(86, 61);
             this.buttonPosition11.TabIndex = 4;
             this.buttonPosition11.UseVisualStyleBackColor = true;
+            this.buttonPosition11.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition21
             // 
@@ -185,6 +181,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition21.Size = new System.Drawing.Size(91, 61);
             this.buttonPosition21.TabIndex = 5;
             this.buttonPosition21.UseVisualStyleBackColor = true;
+            this.buttonPosition21.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition22
             // 
@@ -195,6 +192,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition22.Size = new System.Drawing.Size(91, 66);
             this.buttonPosition22.TabIndex = 6;
             this.buttonPosition22.UseVisualStyleBackColor = true;
+            this.buttonPosition22.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition12
             // 
@@ -205,6 +203,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition12.Size = new System.Drawing.Size(86, 66);
             this.buttonPosition12.TabIndex = 7;
             this.buttonPosition12.UseVisualStyleBackColor = true;
+            this.buttonPosition12.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // buttonPosition02
             // 
@@ -215,6 +214,7 @@ namespace TicTacToeWinFormApp
             this.buttonPosition02.Size = new System.Drawing.Size(86, 66);
             this.buttonPosition02.TabIndex = 8;
             this.buttonPosition02.UseVisualStyleBackColor = true;
+            this.buttonPosition02.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // MainForm
             // 
@@ -238,8 +238,7 @@ namespace TicTacToeWinFormApp
         private System.Windows.Forms.Panel panelConfigGame;
         private System.Windows.Forms.Label labelWhoStartGame;
         private System.Windows.Forms.ComboBox comboBoxWhoStartGame;
-        private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Button buttonNewGame;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBoard;
         private System.Windows.Forms.Button buttonPosition00;
         private System.Windows.Forms.Button buttonPosition10;
