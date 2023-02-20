@@ -37,6 +37,11 @@ namespace TicTacToeWinFormApp
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             currentPlayerNumber = comboBoxWhoStartGame.SelectedIndex;
+
+            for (int col = 0; col < 3; col++)
+                for (int row = 0; row < 3; row++)
+                    buttonBoard[col, row].Text = "";
+
             tableLayoutPanelBoard.Visible = true;
         }
 
@@ -55,7 +60,8 @@ namespace TicTacToeWinFormApp
             //sprawdzenie czy koniec gry (wygrana lub remis)
             if (CheckWin(currentPlayerNumber))
             {
-
+                MessageBox.Show("Wygrana " + players[currentPlayerNumber] + "!!!!!!!");
+                tableLayoutPanelBoard.Visible = false;
                 return;
             }
 
@@ -77,10 +83,37 @@ namespace TicTacToeWinFormApp
 
         private bool CheckWin(int currentPlayerNumber)
         {
-            if (buttonPosition00.Text == players[currentPlayerNumber]
+            /*if (buttonPosition00.Text == players[currentPlayerNumber]
                 && buttonPosition10.Text == players[currentPlayerNumber]
                 && buttonPosition20.Text == players[currentPlayerNumber])
+                return true;*/
+
+            for (int col = 0; col < 3; col++)
+            {
+                if (buttonBoard[col, 0].Text == players[currentPlayerNumber]
+                    && buttonBoard[col, 1].Text == players[currentPlayerNumber]
+                    && buttonBoard[col, 2].Text == players[currentPlayerNumber])
+                    return true;
+            }
+
+            for (int row = 0; row < 3; row++)
+            {
+                if (buttonBoard[0, row].Text == players[currentPlayerNumber]
+                    && buttonBoard[1, row].Text == players[currentPlayerNumber]
+                    && buttonBoard[2, row].Text == players[currentPlayerNumber])
+                    return true;
+            }
+
+            if (buttonBoard[0, 0].Text == players[currentPlayerNumber]
+                && buttonBoard[1, 1].Text == players[currentPlayerNumber]
+                && buttonBoard[2, 2].Text == players[currentPlayerNumber])
                 return true;
+
+            if (buttonBoard[2, 0].Text == players[currentPlayerNumber]
+                && buttonBoard[1, 1].Text == players[currentPlayerNumber]
+                && buttonBoard[0, 2].Text == players[currentPlayerNumber])
+                return true;
+
 
             return false;
         }
