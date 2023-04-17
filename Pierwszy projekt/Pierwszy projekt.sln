@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstWinFormsApp", "FirstWi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalculatorApp", "SimpleCalculatorApp\SimpleCalculatorApp.csproj", "{66CFB9DC-B671-4185-A672-8BDE603B6C66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeWinFormApp", "TicTacToeWinFormApp\TicTacToeWinFormApp.csproj", "{15580D8E-9F60-4F3E-8508-221AF03238F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeWinFormApp", "TicTacToeWinFormApp\TicTacToeWinFormApp.csproj", "{15580D8E-9F60-4F3E-8508-221AF03238F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{67E764EA-7FD0-4629-94A8-A5627254A6CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{15580D8E-9F60-4F3E-8508-221AF03238F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15580D8E-9F60-4F3E-8508-221AF03238F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15580D8E-9F60-4F3E-8508-221AF03238F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E764EA-7FD0-4629-94A8-A5627254A6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E764EA-7FD0-4629-94A8-A5627254A6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E764EA-7FD0-4629-94A8-A5627254A6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E764EA-7FD0-4629-94A8-A5627254A6CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{14E7EDE8-D791-4ACC-942C-5710C26AAF3D} = {5839812A-A60F-4398-81F8-984A0894F4B1}
 		{66CFB9DC-B671-4185-A672-8BDE603B6C66} = {5839812A-A60F-4398-81F8-984A0894F4B1}
 		{15580D8E-9F60-4F3E-8508-221AF03238F5} = {5839812A-A60F-4398-81F8-984A0894F4B1}
+		{67E764EA-7FD0-4629-94A8-A5627254A6CE} = {5839812A-A60F-4398-81F8-984A0894F4B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84F08BD6-5A7E-457E-BB97-0994CB37C669}
