@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl7.css">
+</head>
+<body>
+    <script>
+        function changeImage(imageName)
+        {
+            let obrazek = document.getElementById("glownyObrazek");
+            obrazek.src=imageName;
+        }
+ 
+        let ktoraIkona = "off";
+        function changeHart()
+        {
+            let icon = document.getElementById("iconHart");
+            if (ktoraIkona == "off")
+            {
+                icon.src = "icon-on.png"
+                ktoraIkona = "on";
+            }
+            else
+            {
+                icon.src = "icon-off.png"
+                ktoraIkona = "off";
+            }
+        }
+    </script>
+
+    <header>
+        <h2>Galeria miejsc ciekawych</h2>
+    </header>
+    <section class="glowny">
+        <img src="lanzarotte.jpg" alt="galeria" id="glownyObrazek">
+    </section>
+    <section class="left">
+        <h3>Przeglądaj zdjęcia</h3>
+        <img src="lanzarotte.jpg" alt="lanzarotte" onclick="changeImage('lanzarotte.jpg')">
+        <img src="pekin.jpg" alt="pekin" onclick="changeImage('pekin.jpg')">
+        <img src="serengeti.jpg" alt="serengeti" onclick="changeImage('serengeti.jpg')">
+        <img src="wenecja.jpg" alt="wenecja" onclick="changeImage('wenecja.jpg')">
+        <img src="tajlandia.jpg" alt="tajlandia" onclick="changeImage('tajlandia.jpg')">
+    </section>
+    <section class="right">
+        <h3>Obrazy w naszej galerii</h3>
+        <table>
+            <tr>
+                <td>
+                    Europa
+                </td>
+                <td>
+                    Azja
+                </td>
+                <td>
+                    Afryka
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    2
+                </td>
+                <td>
+                    1
+                </td>
+            </tr>
+        </table>
+        <p>Polub nas <img src="icon-off.png" onclick="changeHart()" id="iconHart"> <a href="https://pixarbay.com" target="_blank">Odkryj więcej zdjęć</a></p>
+    </section>
+    <footer>
+        Autor:00000000000
+    </footer>
+    
+</body>
+</html>

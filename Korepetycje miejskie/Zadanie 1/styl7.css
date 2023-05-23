@@ -1,0 +1,62 @@
+*
+{
+    font-family:  Helvetica;
+}
+
+header, footer
+{
+    background: rgb(70,130,180);
+    color: white;
+    height: 30px;
+    text-align: center;
+}
+
+footer
+{
+    clear: both;
+}
+
+.glowny
+{
+    background: rgb(176,196,222);
+    padding: 50px;
+    text-align: center;
+}
+.left
+{
+    background: rgb(70,130,180);  
+    color: white;
+    height: 300px;
+    width: 80%;
+    float: left;
+}
+.right
+{
+    background: rgb(70,130,180);  
+    color: white;
+    height: 300px;
+    width: 20%;
+    float: left;
+}
+
+.glowny img
+{
+    padding: 3px;
+    border: 1px dotted blue;
+    border-radius: 10px;
+}
+
+.left img
+{
+    height: 40%;
+
+}
+.left img:hover
+{
+    border: 1px solid white;
+}
+/*
+Dla wszystkich zdjęć w bloku lewym: wysokość 40%, gdy mysz znajdzie się na obrazie pojawia się 
+obramowanie linią ciągłą koloru białego i grubości 1px, co widać na Obrazie 2 (trzecia miniatura)
+
+*/
