@@ -1,0 +1,14 @@
+
+select m.nazwa, m.ilosc, p.nazwaProd
+  from Materialy m
+  join Producenci p on p.id = m.Producenci_id
+ where m.ilosc > 9
+ 
+ select m.nazwa, p.nazwaProd
+   from Materialy m
+   join Producenci p on p.id = m.Producenci_id
+   join Jednostki j on j.id = m.Jednostki_id
+   
+create user 'zaopatrzenie'@'localhost' IDENTIFIED by 'Z@op@trzenie'
+
+GRANT ALL PRIVILEGES ON *.* TO 'zaopatrzenie'@'localhost';

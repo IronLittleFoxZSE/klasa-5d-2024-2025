@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <header>
+        <h1>Sieci komputerowe</h1>
+    </header>
+    <section class="left">
+        <h2>Aktualizacja i zamówienia materiałów</h2>
+        <p>Do wewnętrznego użytku firmy</p>
+        <img src="obraz.png" alt="sieć komputerowa">
+    </section>
+    <section class="right">
+        <table>
+            <tr>
+                <th>Produkt</th>
+                <th>Jednostka</th>
+                <th>Dostępna ilość</th>
+                <th>Aktualizacja</th>
+                <th>Zamówienie</th>
+            </tr>
+            <tr>
+                <td id="produkt1">Skrętka U/UTP drut</td>
+                <td>metr</td>
+                <td id="wiersz1">20</td>
+                <td>
+                    <button onclick="aktualizuj('wiersz1')">Aktualizuj</button>
+                </td>
+                <td>
+                    <button onclick="zamow('produkt1')">Zamów</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="produkt2">Skrętka U/UTP linka</td>
+                <td>metr</td>
+                <td id="wiersz2">2</td>
+                <td>
+                    <button onclick="aktualizuj('wiersz2')">Aktualizuj</button>
+                </td>
+                <td>
+                    <button onclick="zamow('produkt2')">Zamów</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="produkt3">Wtyki 8P8C</td>
+                <td>sztuki</td>
+                <td id="wiersz3">10</td>
+                <td>
+                    <button onclick="aktualizuj('wiersz3')">Aktualizuj</button>
+                </td>
+                <td>
+                    <button onclick="zamow('produkt3')">Zamów</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="produkt4">Moduły Keystone</td>
+                <td>sztuki</td>
+                <td id="wiersz4">30</td>
+                <td>
+                    <button onclick="aktualizuj('wiersz4')">Aktualizuj</button>
+                </td>
+                <td>
+                    <button onclick="zamow('produkt4')">Zamów</button>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <footer>
+        <a href="http://sieci.pl" target="_blank">Nasza 
+            strona internetowa</a>
+            <p>Stronę przygotował: 12345678901</p>
+    </footer>
+    
+    <script>
+
+
+        function aktualizuj(idWiersza)
+        {
+            let wartosc = prompt("Podaj nową ilość:");
+            let komorka = document.getElementById(idWiersza);
+            komorka.innerText=wartosc;
+            braki();
+        }
+        function zamow(idProdukt)
+        {
+            let produkt = document.getElementById(idProdukt);
+            idZamowienia++;
+            alert("Zamówienie nr: " 
+            + idZamowienia 
+            + " Produkt: " 
+            + produkt.innerText);
+        }
+
+        function braki()
+        {
+            for(let i = 1; i <= 4; i++)
+            {
+                let wiersz = document.getElementById("wiersz"+i);
+                if (wiersz.innerHTML == 0)
+                    wiersz.style.background="red";
+                else if (wiersz.innerHTML >= 1 
+                        && wiersz.innerHTML <= 5)
+                    {
+                        wiersz.style.background="yellow";
+                    }
+                else
+                    wiersz.style.background="honeydew";
+            }
+        }
+
+        braki();
+        let idZamowienia = 0;
+
+    </script>
+</body>
+</html>
