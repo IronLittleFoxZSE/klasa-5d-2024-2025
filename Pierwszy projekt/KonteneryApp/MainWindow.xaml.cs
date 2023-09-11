@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FirstWpfApp
+namespace KonteneryApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,14 +25,22 @@ namespace FirstWpfApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonWrapPanel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Komunikat po kliknięciu w przycisk");
+            WrapPanelWindow wrapPanelWindow = new WrapPanelWindow();
+            wrapPanelWindow.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonStackPanel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Podałeś wartość: " + valueTextBox.Text);
+            StackPanelWindow stackPanelWindow = new StackPanelWindow();
+            stackPanelWindow.Show();
+        }
+
+        private void ButtonDockPanel_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelWindow dockPanelWindow = new DockPanelWindow();
+            dockPanelWindow.Show();
         }
     }
 }

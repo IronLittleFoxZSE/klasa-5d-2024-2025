@@ -50,7 +50,8 @@
 
         <TextBox Text="Zawartość" 
                  Canvas.Left="468"
-                 Canvas.Top="335"/>
+                 Canvas.Top="335"
+                 Name="valueTextBox"/>
         <Button Content="Kliknij we mnie"
                 Canvas.Left="456" 
                 Canvas.Top="372"
