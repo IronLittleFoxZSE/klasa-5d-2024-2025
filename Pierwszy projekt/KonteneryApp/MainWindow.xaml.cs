@@ -42,5 +42,11 @@ namespace KonteneryApp
             DockPanelWindow dockPanelWindow = new DockPanelWindow();
             dockPanelWindow.Show();
         }
+
+        private void ButtonGrid_Click(object sender, RoutedEventArgs e)
+        {
+            GridWindow gridWindow = new GridWindow();
+            gridWindow.Show();
+        }
     }
 }

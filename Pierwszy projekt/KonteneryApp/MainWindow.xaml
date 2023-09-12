@@ -19,5 +19,9 @@
                 Canvas.Left="236"
                 Canvas.Top="80"
                 Click="ButtonDockPanel_Click"/>
+        <Button Content="Grid" 
+                Canvas.Left="321"
+                Canvas.Top="65"
+                Click="ButtonGrid_Click"/>
     </Canvas>
 </Window>

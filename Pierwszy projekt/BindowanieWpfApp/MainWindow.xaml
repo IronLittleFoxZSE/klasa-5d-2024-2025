@@ -1,0 +1,38 @@
+﻿<Window x:Class="BindowanieWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindowanieWpfApp"
+        mc:Ignorable="d"
+        Title="Tytuł strony" Height="450" Width="400"
+        Name="thisWindow">
+    <StackPanel>
+        <TextBlock Text="Wartość wprowadzona:"/>
+        <TextBlock FontSize="30"
+                   Name="textBlockWynik"/>
+        <TextBox Margin="20 5"
+                 Name="textBoxInfo"
+                 TextChanged="textBoxInfo_TextChanged"/>
+        <Button Content="Przepisz" 
+                Margin="20" 
+                HorizontalAlignment="Center" 
+                Click="Button_Click"/>
+        
+        <TextBlock Text="Wersja z bindowaniem:" FontSize="30" FontWeight="Bold"/>
+        <TextBlock Text="Wartość wprowadzona:"/>
+        <TextBlock FontSize="30"
+                   Text="{Binding ElementName=textBoxSource,Path=Text}"/>
+        <TextBox Margin="20 5"
+                 Name="textBoxSource"/>
+
+        <TextBlock Text="Odświerzanie tytułu strony" FontSize="20"/>
+        <TextBox Text="{Binding ElementName=thisWindow,Path=Title,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBox Text="Komunikta z pola:" FontSize="30" FontWeight="Bold"/>
+        <TextBox Text="{Binding ElementName=thisWindow,Path=SourceValue}"/>
+        <Button Content="Pokaż komuinikat" 
+                HorizontalAlignment="Center"
+                Click="Button_Click_1"/>
+    </StackPanel>
+</Window>
