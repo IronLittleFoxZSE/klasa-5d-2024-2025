@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindowanieWpfApp"
         mc:Ignorable="d"
-        Title="Tytuł strony" Height="450" Width="400"
+        Title="Tytuł strony" Height="568" Width="400"
         Name="thisWindow">
     <StackPanel>
         <TextBlock Text="Wartość wprowadzona:"/>
@@ -34,5 +34,11 @@
         <Button Content="Pokaż komuinikat" 
                 HorizontalAlignment="Center"
                 Click="Button_Click_1"/>
+        
+        <TextBlock Text="Dzień tygodnia" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Text="{Binding ElementName=thisWindow,Path=NameDayOfWeek}"/>
+        <TextBox Text="{Binding ElementName=thisWindow, Path=StringNumberOfWeek}"/>
+        <Button Content="Pokaż dzień tygodnia"
+                Click="ButtonShowDayOfWeek_Click"/>
     </StackPanel>
 </Window>
