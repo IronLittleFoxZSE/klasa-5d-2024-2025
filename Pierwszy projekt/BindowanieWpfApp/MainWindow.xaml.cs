@@ -43,25 +43,6 @@ namespace BindowanieWpfApp
             }
         }
 
-        private string dana;
-
-        public string Dana
-        {
-            get { return dana; }
-            set 
-            { 
-                dana = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Czesc
-        {
-            get { return Dana[0].ToString(); }
-        }
-
-
-
         public MainWindow()
         {
             InitializeComponent();
