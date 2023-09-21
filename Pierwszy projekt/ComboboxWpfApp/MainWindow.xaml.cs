@@ -26,6 +26,8 @@ namespace ComboboxWpfApp
         public ObservableCollection<string> ItemsList { get; set; }
         public string NewPosition { get; set; }
 
+        public ObservableCollection<OwnColor> OwnColorsCollection { get; set; }
+
         #region informowanie bindowania
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -39,6 +41,23 @@ namespace ComboboxWpfApp
 
         public MainWindow()
         {
+            OwnColorsCollection = new ObservableCollection<OwnColor>();
+            OwnColorsCollection.Add(new OwnColor()
+            {
+                NameOfColor_Pol = "Zielony",
+                NameOfColor_Eng = "Green"
+            });
+            OwnColorsCollection.Add(new OwnColor()
+            {
+                NameOfColor_Pol = "Czerwony",
+                NameOfColor_Eng = "Red"
+            });
+            OwnColorsCollection.Add(new OwnColor()
+            {
+                NameOfColor_Pol = "Złoty",
+                NameOfColor_Eng = "Gold"
+            });
+
             InitializeComponent();
             ItemsList = new ObservableCollection<string>();
             OnPropertyChanged(nameof(ItemsList));
@@ -51,7 +70,7 @@ namespace ComboboxWpfApp
         private void ButtonNewComboboxPosition_Click(object sender, RoutedEventArgs e)
         {
             ItemsList.Add(NewPosition);
-            OnPropertyChanged(nameof(ItemsList));
+            //OnPropertyChanged(nameof(ItemsList));
         }
     }
 }

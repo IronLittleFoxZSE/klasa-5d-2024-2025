@@ -52,5 +52,18 @@
                 HorizontalAlignment="Center"
                 Click="ButtonNewComboboxPosition_Click"/>
 
+        <TextBlock Text="Zaawansowane bindowanie combobox:"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+        <ComboBox ItemsSource="{Binding ElementName=thisWindow,Path=OwnColorsCollection}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Width="16" Height="16" Fill="{Binding NameOfColor_Eng}" Margin="10"/>
+                        <TextBlock Text="{Binding Path=NameOfColor_Pol}" Foreground="{Binding NameOfColor_Eng}" Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </StackPanel>
 </Window>
