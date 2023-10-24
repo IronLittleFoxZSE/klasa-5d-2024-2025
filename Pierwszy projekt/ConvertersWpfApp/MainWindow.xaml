@@ -1,0 +1,55 @@
+﻿<Window x:Class="ConvertersWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvertersWpfApp"
+        xmlns:converters="clr-namespace:ConvertersWpfApp.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Name="thisWindow">
+    <Window.Resources>
+        <converters:ColorComponentToColorSaturationPrecentageConverter x:Key="ColorComponentToColorSaturationPrecentageConverter"/>
+    </Window.Resources>
+    <StackPanel>
+        <WrapPanel>
+            <TextBlock Text="Red:" FontSize="20" FontWeight="Bold" Width="100"/>
+            <Slider Width="200"
+                    Minimum="0"
+                    Maximum="255"
+                    Value="{Binding ElementName=thisWindow,Path=RedComponent}"
+                    TickFrequency="1"
+                    TickPlacement="None"
+                    IsSnapToTickEnabled="True"/>
+            <TextBlock Text="{Binding ElementName=thisWindow
+                             ,Path=RedComponent
+                             ,StringFormat=Wartość koloru {0} }"/>
+            <TextBlock Text="{Binding ElementName=thisWindow
+                             ,Path=RedComponent
+                             ,StringFormat=Procent nasycenia: {0} %
+                             ,Converter={StaticResource ColorComponentToColorSaturationPrecentageConverter}}"/>
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Green:" FontSize="20" FontWeight="Bold" Width="100"/>
+            <Slider Width="200"
+                    Minimum="0"
+                    Maximum="255"
+                    Value="{Binding ElementName=thisWindow,Path=GreenComponent}"
+                    TickFrequency="1"
+                    TickPlacement="None"
+                    IsSnapToTickEnabled="True"/>
+            <TextBlock Text="{Binding ElementName=thisWindow,Path=GreenComponent}"/>
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Blue:" FontSize="20" FontWeight="Bold" Width="100"/>
+            <Slider Width="200"
+                    Minimum="0"
+                    Maximum="255"
+                    Value="{Binding ElementName=thisWindow,Path=BlueComponent}"
+                    TickFrequency="1"
+                    TickPlacement="None"
+                    IsSnapToTickEnabled="True"/>
+            <TextBlock Text="{Binding ElementName=thisWindow,Path=BlueComponent}"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>
