@@ -71,5 +71,12 @@ namespace ConvertersWpfApp
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RedComponent = 255;
+            GreenComponent = 0;
+            BlueComponent = 0;
+        }
     }
 }

@@ -10,6 +10,7 @@
         Name="thisWindow">
     <Window.Resources>
         <converters:ColorComponentToColorSaturationPrecentageConverter x:Key="ColorComponentToColorSaturationPrecentageConverter"/>
+        <converters:DoublesToColorConverter x:Key="DoublesToColorConverter"/>
     </Window.Resources>
     <StackPanel>
         <WrapPanel>
@@ -39,6 +40,10 @@
                     TickPlacement="None"
                     IsSnapToTickEnabled="True"/>
             <TextBlock Text="{Binding ElementName=thisWindow,Path=GreenComponent}"/>
+            <TextBlock Text="{Binding ElementName=thisWindow
+                             ,Path=GreenComponent
+                             ,StringFormat=Procent nasycenia: {0} %
+                             ,Converter={StaticResource ColorComponentToColorSaturationPrecentageConverter}}"/>
         </WrapPanel>
         <WrapPanel>
             <TextBlock Text="Blue:" FontSize="20" FontWeight="Bold" Width="100"/>
@@ -50,6 +55,20 @@
                     TickPlacement="None"
                     IsSnapToTickEnabled="True"/>
             <TextBlock Text="{Binding ElementName=thisWindow,Path=BlueComponent}"/>
+            <TextBlock Text="{Binding ElementName=thisWindow
+                             ,Path=BlueComponent
+                             ,StringFormat=Procent nasycenia: {0} %
+                             ,Converter={StaticResource ColorComponentToColorSaturationPrecentageConverter}}"/>
         </WrapPanel>
+        <Button Content="Ustaw kolor czerwony" Click="Button_Click" Margin="20"/>
+        <Rectangle Width="100" Height="100">
+            <Rectangle.Fill>
+                <MultiBinding Converter="{StaticResource DoublesToColorConverter}">
+                    <Binding ElementName="thisWindow" Path="RedComponent" Mode="OneWay"/>
+                    <Binding ElementName="thisWindow" Path="GreenComponent" Mode="OneWay"/>
+                    <Binding ElementName="thisWindow" Path="BlueComponent" Mode="OneWay"/>
+                </MultiBinding>
+            </Rectangle.Fill>
+        </Rectangle>
     </StackPanel>
 </Window>
