@@ -22,6 +22,7 @@ namespace SimpleCalculatorMVVMWpfApp
     {
         public MainWindow()
         {
+            //DataContext = new MainViewModel();
             InitializeComponent();
         }
     }
