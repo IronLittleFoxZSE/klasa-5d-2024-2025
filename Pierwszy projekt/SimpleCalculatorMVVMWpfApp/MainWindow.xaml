@@ -22,8 +22,10 @@
                      Text="{Binding SecondNumber}"/>
         </WrapPanel>
         <WrapPanel>
-            <Button Content="+" Width="50" Height="50" Margin="10"/>
-            <Button Content="-" Width="50" Height="50" Margin="10"/>
+            <Button Content="+" Width="50" Height="50" Margin="10"
+                    Command="{Binding AddCommand}"/>
+            <Button Content="-" Width="50" Height="50" Margin="10"
+                    Command="{Binding SubCommand}"/>
             <Button Content="*" Width="50" Height="50" Margin="10"/>
             <Button Content="/" Width="50" Height="50" Margin="10"/>
         </WrapPanel>

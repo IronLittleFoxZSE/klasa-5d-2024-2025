@@ -42,5 +42,24 @@ namespace SimpleCalculatorMVVMWpfApp
                 OnPropertyChanged(nameof(Result));
             }
         }
+
+        public ICommand AddCommand { get; set; }
+        public ICommand SubCommand { get; set; }
+
+        public MainViewModel()
+        {
+            AddCommand = new RelayCommand<object>(Add);
+            SubCommand = new RelayCommand<object>((object o) => 
+            {
+                int sub = FirstNumber - SecondNumber;
+                Result = "Wynik odejmowania " + sub.ToString();
+            });
+        }
+
+        private void Add(object o)
+        {
+            int sum = FirstNumber + SecondNumber;
+            Result = "Wynik dodawania " + sum.ToString();
+        }
     }
 }
