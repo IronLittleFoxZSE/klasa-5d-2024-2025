@@ -46,10 +46,64 @@ namespace SimpleCalculatorMVVMWpfApp
         public ICommand AddCommand { get; set; }
         public ICommand SubCommand { get; set; }
 
+        private ICommand mulCommand = null;
+        public ICommand MulCommand
+        {
+            get
+            {
+                if (mulCommand == null)
+                    mulCommand = new RelayCommand<object>(
+                        o =>
+                        {
+                            int mul = FirstNumber * SecondNumber;
+                            Result = "Wynik mnożenia " + mul.ToString();
+                        }
+                        );
+                return mulCommand;
+            }
+        }
+
+        private ICommand multiTaskCommand;
+        public ICommand MultiTaskCommand
+        {
+            get
+            {
+                if (multiTaskCommand == null)
+                    multiTaskCommand = new RelayCommand<string>(
+                        operationSign =>
+                        {
+                            switch (operationSign)
+                            {
+                                case "+":
+                                    int sum = FirstNumber + SecondNumber;
+                                    Result = "Wynik dodawania " + sum.ToString();
+                                    break;
+                                case "-":
+                                    int sub = FirstNumber - SecondNumber;
+                                    Result = "Wynik odejmowania " + sub.ToString();
+                                    break;
+                                case "*":
+                                    int mul = FirstNumber * SecondNumber;
+                                    Result = "Wynik mnożenia " + mul.ToString();
+                                    break;
+                                case "/":
+                                    int div = FirstNumber / SecondNumber;
+                                    Result = "Wynik dzielenia " + div.ToString();
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        );
+                return multiTaskCommand;
+            }
+        }
+
         public MainViewModel()
         {
             AddCommand = new RelayCommand<object>(Add);
-            SubCommand = new RelayCommand<object>((object o) => 
+
+            SubCommand = new RelayCommand<object>((object o) =>
             {
                 int sub = FirstNumber - SecondNumber;
                 Result = "Wynik odejmowania " + sub.ToString();

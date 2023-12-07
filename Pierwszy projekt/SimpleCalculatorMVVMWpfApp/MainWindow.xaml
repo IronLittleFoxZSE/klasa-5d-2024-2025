@@ -26,8 +26,11 @@
                     Command="{Binding AddCommand}"/>
             <Button Content="-" Width="50" Height="50" Margin="10"
                     Command="{Binding SubCommand}"/>
-            <Button Content="*" Width="50" Height="50" Margin="10"/>
-            <Button Content="/" Width="50" Height="50" Margin="10"/>
+            <Button Content="*" Width="50" Height="50" Margin="10"
+                    Command="{Binding MulCommand}"/>
+            <Button Content="/" Width="50" Height="50" Margin="10"
+                    Command="{Binding MultiTaskCommand}"
+                    CommandParameter="/"/>
         </WrapPanel>
         <TextBlock Text="{Binding Result}"/>
     </StackPanel>
