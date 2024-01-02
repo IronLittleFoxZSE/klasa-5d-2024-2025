@@ -1,10 +1,12 @@
 # klasa-4d-2022-2023
 
 
-Komputery 1, 3, 5, 7, 9, 11, 13, 15, 17
+Zadania na 3:
+* Aplikacja do konwertowania jednostek miar, takich jak odległość, masa, czas, temperatura itp.
 
-https://forms.office.com/e/zFaV1JqhUV
+Zadania na 4:
+* Prosta aplikacja do tworzenia listy rzeczy do zakupu. Możliwość dodawania i usuwania rzeczy z listy.
+* Aplikacja słownikowa, która umożliwia użytkownikowi przeszukiwanie definicji słów. Możliwość dodawania słowa i definicji do listy.
 
-Komputery 2, 4, 6, 8, 10, 12, 14, 16
-
-https://forms.office.com/e/xcHJ8Z5uu8
+Zadania na 5
+* Gra w Kółko-Krzyżyk.
