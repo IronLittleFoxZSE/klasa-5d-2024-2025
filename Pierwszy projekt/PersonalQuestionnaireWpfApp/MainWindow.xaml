@@ -26,6 +26,16 @@
                   Margin="0 10"
                   IsChecked="{Binding PizzaWithPineapple}"/>
 
+        <TextBlock Text="Wybierz płeć:"/>
+        <RadioButton Content="mężczyzna"
+                     IsChecked="{Binding IsMale}"/>
+        <RadioButton Content="kobieta"
+                     IsChecked="{Binding IsFemale}"/>
+
+        <TextBlock Text="Wybierz ulubione danie:"/>
+        <ComboBox ItemsSource="{Binding ListOfDish}"
+                  SelectedItem="{Binding SelectedDish}"/>
+
         <Button Content="Pobierz dane"
                 HorizontalAlignment="Center"
                 Margin="10"

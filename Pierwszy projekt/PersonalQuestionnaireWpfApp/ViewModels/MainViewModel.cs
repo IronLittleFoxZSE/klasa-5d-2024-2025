@@ -33,6 +33,45 @@ namespace PersonalQuestionnaireWpfApp.ViewModels
             }
         }
 
+        public bool IsMale
+        {
+            get { return personalDataModel.isMale; }
+            set
+            {
+                personalDataModel.isMale = value;
+                OnPropertyChanged(nameof(IsMale));
+            }
+        }
+
+        public bool IsFemale
+        {
+            get { return personalDataModel.isFemale; }
+            set
+            {
+                personalDataModel.isFemale = value;
+                OnPropertyChanged(nameof(IsFemale));
+            }
+        }
+
+        public List<string> ListOfDish
+        {
+            get { return personalDataModel.listOfDish; }
+            set
+            {
+                personalDataModel.listOfDish = value;
+                OnPropertyChanged(nameof(ListOfDish));
+            }
+        }
+
+        public string SelectedDish
+        {
+            get { return personalDataModel.selectedDish; }
+            set
+            {
+                personalDataModel.selectedDish = value;
+                OnPropertyChanged(nameof(SelectedDish));
+            }
+        }
 
         private string questionnaireResult;
         public string QuestionnaireResult
@@ -57,7 +96,8 @@ namespace PersonalQuestionnaireWpfApp.ViewModels
                             string result = "";
                             result += "Imię: " + Name + "\n";
                             result += "Pizza z ananasem: " + (PizzaWithPineapple ? "Tak" : "Nie") + "\n";
-
+                            result += "Płeć: " + (IsMale ? "mężczyzna" : "kobiata") + "\n";
+                            result += "Ulubione danie: " + SelectedDish + "\n";
                             QuestionnaireResult = result;
                         }
                         );
