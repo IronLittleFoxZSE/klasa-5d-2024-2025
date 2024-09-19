@@ -1,12 +1,7 @@
-# klasa-4d-2022-2023
+# klasa-5d-2024-2025
 
 
-Zadania na 3:
-* Aplikacja do konwertowania jednostek miar, takich jak odległość, masa, czas, temperatura itp.
+Tematy prac:
+* Podstawowe komponenty platformy .NET.
 
-Zadania na 4:
-* Prosta aplikacja do tworzenia listy rzeczy do zakupu. Możliwość dodawania i usuwania rzeczy z listy.
-* Aplikacja słownikowa, która umożliwia użytkownikowi przeszukiwanie definicji słów. Możliwość dodawania słowa i definicji do listy.
-
-Zadania na 5
-* Gra w Kółko-Krzyżyk.
+Wyjaśnienie, z jakich kluczowych komponentów składa się platforma .NET, takich jak biblioteki klas (Base Class Library), CLR oraz narzędzia deweloperskie.
