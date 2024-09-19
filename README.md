@@ -2,6 +2,6 @@
 
 
 Tematy prac:
-* Podstawowe komponenty platformy .NET.
+* Co to jest platforma .NET. Podstawowe komponenty platformy .NET.
 
 Wyjaśnienie, z jakich kluczowych komponentów składa się platforma .NET, takich jak biblioteki klas (Base Class Library), CLR oraz narzędzia deweloperskie.
