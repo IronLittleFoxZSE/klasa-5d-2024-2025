@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstProjectMauiApp.MainPage">
+
+    <StackLayout >
+        <Label Text="Tekst który zostanie wyświetlony"/>
+        <Entry x:Name="messageEntry" Text="Tekst początkowy"/>
+        <Button Text="Kliknij mnie"
+                BackgroundColor="Bisque"
+                TextColor="Brown"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Start"/>
+        <Label x:Name="messageLabel"/>
+        <CheckBox/>
+        <CheckBox IsChecked="True"/>
+        <RadioButton/>
+        <RadioButton/>
+        <RadioButton IsChecked="True"/>
+        <Slider Minimum="10"
+                Maximum="120"
+                Value="30"
+                ValueChanged="Slider_ValueChanged"
+                x:Name="ageSlider"/>
+        <Label x:Name="ageLabel"/>
+
+        <Label Text="Wybierz:"/>
+        <Picker x:Name="fruitPicker"/>
+        <Button Text="Sprawdź"
+                Clicked="Favorite_Button_Clicked"/>
+        <Label x:Name="favoriteFruitLabel"/>
+        <Switch/>
+        <!--<Image Source="dotnet_bot.png"/>-->
+        <Image x:Name="ourImage"/>
+        <Button Text="Załaduj obrazek"
+                Clicked="Button_Clicked_1"/>
+       
+    </StackLayout>
+</ContentPage>
