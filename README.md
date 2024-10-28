@@ -9,3 +9,5 @@ Wyjaśnienie, z jakich kluczowych komponentów składa się platforma .NET, taki
 * Co to jest Entity Framework w .NET?
  
 Przedstawienie podstaw narzędzia Entity Framework, które ułatwia pracę z bazami danych w aplikacjach .NET, oraz wprowadzenie do ORM (Object-Relational Mapping).
+
+* Wzorce projektowe w C# i ich zastosowania w rzeczywistych projektach
