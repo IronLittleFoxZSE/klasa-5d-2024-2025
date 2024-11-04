@@ -1,0 +1,32 @@
+Rezultat 1 Implementacja, kompilacja, uruchomienie programu
+Uwaga kryteria należy odnieść do aplikacji konsolowej, jeżeli ta nie istnieje, zastosować kryteria 1.1 - 1.6 do aplikacji mobilnej. Kryteria dotyczą wyłącznie kodu napisanego samodzielnie
+Wystarczy, że sprawdzaną cechę zastosowano dla większości przypadków w kodzie
+R.1.1 Kod źródłowy zapisano w sposób czytelny instrukcje w osobnych liniach, stosowane spacje pomiędzy operatorami, konsekwentnie stosowana wybrana konwencja dla nawiasów klamrowych
+R.1.2 Kod zapisano z wcięciami dla zagłębień bloków
+R.1.3 Użyto znaczące nazewnictwo metod  funkcji
+R.1.4 Użyto polskie lub angielskie, znaczące nazewnictwo zmiennych oraz klasy. Wyjątkami od reguły są zmienne bufor, tmp, iteratory pętli itp. Kryterium nie jest spełnione tylko wtedy, gdy nazwy zmiennych nic nie znaczą, np. x, fun, foo, tab, tablica
+R.1.5 Zastosowano typy zmiennych pasujące do problemu (np. dowolny typ numeryczny dla licznika; dowolny typ napisowy)
+R.1.6 Podjęto próbę skompilowania kodu lub uruchomienia w interpreterze, co udokumentowano
+zrzutem ekranowym przedstawiającym uruchomiony program lub jego kompilację
+R.1.7 Program nawiązuje zrozumiałą komunikację z użytkownikiem monit o wprowadzenie danych, wyprowadzanie wyników opatrzone komentarzem. Jeżeli kod nie uruchamia się z powodu błędów kompilacji - sprawdzić w kodzie aplikacji
+R.2
+Rezultat 2 Aplikacja konsolowa
+Uwaga kryteria 2.1 - 2.6 należy sprawdzić w kodzie programu, sprawdzane elementy
+muszą być zapisane zgodnie ze składnią.
+Gdy aplikacja nie uruchamia się, a zdający zapisał zrzuty ekranu z uruchomienia aplikacji należy sprawdzić powód braku kompilacji. Jeśli występują błędy w plikach źródłowych zdającego kryteria 2.7 - 2.9 nie są spełnione. Jeżeli błędy występują w innych plikach
+ocenić na podstawie kodu i zrzutu ekranu.
+W kryteriach 2.3 - 2.6 dopuszcza się funkcje zamiast metod (podejście strukturalne)
+R.2.1 Program składa się z programu głównego oraz definicji klasy, w której znajduje się przynajmniej jedna metoda zgodna z treścią zadania (może być niedokończona, lub z
+błędami)
+R.2.2 Zdefiniowane w klasie metody są statyczne o zakresie public
+R.2.3 Metoda zliczająca samogłoski ma zmienną łańcuchową jako parametr oraz zwraca wartość
+typu całkowitego. Zastosowano instrukcję return dla każdej ścieżki decyzyjnej
+R.2.4 Metoda zliczająca samogłoski jest zabezpieczona przed wartościami argumentu null lub pusty napis - w obu przypadkach zwraca 0. Metoda nie powoduje błędów odwołania się do
+nieistniejącego indeksu
+R.2.5 Zmienna łańcuchowa jest parametrem metody usuwającej duplikaty. Metoda zwraca
+łańcuch. Zastosowano instrukcję return dla każdej ścieżki decyzyjnej
+R.2.6 Metoda usuwająca duplikaty jest zabezpieczona przed wartościami argumentu null lub pusty napis - w obu przypadkach zwraca pusty napis. Metoda nie powoduje błędów
+odwołania się do nieistniejącego indeksu
+R.2.7 Program uruchamia się w konsoli, co udokumentowano zrzutem ekranu
+R.2.8 Program liczy samogłoski aąeęiouóyAĄEĘlOUOY w łańcuchu i wyświetla ich liczbę
+R.2.9 Program usuwa duplikaty znaków występujące obok siebie i wypisuje łańcuch bez nich. Sprawdzić dla wielokrotnych spacji, liter, znaków specjalnych. Sprawdzić, gdy powtórzenie jest na początku łańcucha oraz na końcu łańcucha
